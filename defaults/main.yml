@@ -31,14 +31,14 @@ filebeat_arch: "{{ (ansible_architecture == 'x86_64') | ternary('amd64', 'i386')
 
 # Start filebeat at boot time
 #
-filebeat_start_at_boot: True
+filebeat_start_at_boot: true
 
 # Filebeat version upgrade
 #  This options allows package upgrades. 
 #  Make sure you know what this implies.
 filebeat_upgrade: false
 
-filebeat_config_enabled: True
+filebeat_config_enabled: true
 
 filebeat_config_file: /etc/filebeat/filebeat.yml
 

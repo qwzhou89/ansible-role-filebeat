@@ -4,14 +4,14 @@
   include_vars: "{{ansible_os_family}}.yml"
   tags: always
 
-- include: install.yml
+- include_tasks: install.yml
   tags: filebeat_install
 
-- include: config.yml
+- include_tasks: config.yml
   tags: filebeat_config
   when: filebeat_config_enabled
 
-- include: template.yml
+- include_tasks: template.yml
   tags: filebeat_template
 
 - name: Ensure Filebeat is enabled and started at boot
