@@ -26,11 +26,11 @@
   - name: Download FileBeat DEB
     get_url:
       url: "{{filebeat_package_url}}"
-      dest: "/var/cache/apt/archives/filebeat-{{filebeat_version}}-amd64.deb"
+      dest: "/var/cache/apt/archives/filebeat-{{filebeat_version}}-{{filebeat_arch}}.deb"
 
   - name: Install FileBeat DEB
     apt:
-      deb: "/var/cache/apt/archives/filebeat-{{filebeat_version}}-amd64.deb"
+      deb: "/var/cache/apt/archives/filebeat-{{filebeat_version}}-{{filebeat_arch}}.deb"
       state: present
     notify: filebeat restart
 
